@@ -15,15 +15,13 @@ import ClockComponent from './components/pure/clockComponent';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      {/* <header className="App-header"> */}
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
         {/* Componente  propio Greeting.jsx */}
         {/* <Greeting name="Yasmín"></Greeting> */}
         {/* Componente de ejemplo funcional */}
         {/* <GreetingF name={'Yasmín'}></GreetingF> */}
-        {/* Componente de listado de tareas */}
-        {/* <TaskList></TaskList> */}
-
+        
         {/* ejercicios 1, 2 y 3 */}
         {/* <UserList></UserList> */}
         
@@ -37,16 +35,19 @@ function App() {
         <p>Otro props.children</p> */}
         {/* </Ejemplo4> */}
         {/* <GreetingStyle name="Yasmin"></GreetingStyle> */}
-        <ClockComponent></ClockComponent>
-        <a
+        {/* <ClockComponent></ClockComponent> */}
+        {/* <a
           className="App-link"
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
         >
           Learn React
-        </a>
-      </header>
+        </a> */}
+      {/* </header> */}
+
+      {/* Componente de listado de tareas */}
+      <TaskList></TaskList>
     </div>
   );
 }
