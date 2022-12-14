@@ -7,8 +7,10 @@ import UserList from './components/container/user_list';
 import Ejemplo1 from './hooks/Ejemplo1';
 import Ejemplo2 from './hooks/Ejemplo2';
 import MiComponenteConContexto from './hooks/Ejemplo3';
-
 import Ejemplo4 from './hooks/Ejemplo4';
+import GreetingStyle from './components/pure/greetingStyle';
+import ClockComponent from './components/pure/clockComponent';
+
 
 function App() {
   return (
@@ -29,11 +31,13 @@ function App() {
         {/* <Ejemplo1></Ejemplo1> */}
         {/* <Ejemplo2></Ejemplo2> */}
         {/* <MiComponenteConContexto></MiComponenteConContexto> */}
-        <Ejemplo4 name="yasmin">
+        {/* <Ejemplo4 name="yasmin"> */}
         {/* Todo lo que hay aqui desde el inicio hasta el cierre, es tratado como props.children en cualquier componente */}
-        <h2> Contenido del props.children</h2>
-        <p>Otro props.children</p>
-        </Ejemplo4>
+        {/* <h2> Contenido del props.children</h2>
+        <p>Otro props.children</p> */}
+        {/* </Ejemplo4> */}
+        {/* <GreetingStyle name="Yasmin"></GreetingStyle> */}
+        <ClockComponent></ClockComponent>
         <a
           className="App-link"
           href="https://reactjs.org"
