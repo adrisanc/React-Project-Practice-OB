@@ -10,6 +10,7 @@ import MiComponenteConContexto from './hooks/Ejemplo3';
 import Ejemplo4 from './hooks/Ejemplo4';
 import GreetingStyle from './components/pure/greetingStyle';
 import ClockComponent from './components/pure/clockComponent';
+import Father from './components/container/father';
 
 
 function App() {
@@ -46,8 +47,11 @@ function App() {
         </a> */}
       {/* </header> */}
 
+      {/* Gestíon de eventos */}
+        <Father></Father>
+        
       {/* Componente de listado de tareas */}
-      <TaskList></TaskList>
+      {/* <TaskList></TaskList> */}
     </div>
   );
 }
