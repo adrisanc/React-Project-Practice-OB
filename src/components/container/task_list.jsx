@@ -4,16 +4,43 @@ import { Task } from "../../models/task.class";
 import { LEVELS } from "../../models/level.enum";
 import TaskComponent from "../pure/task";
 import "../../styles/task.scss";
+import TaskForm from "../pure/forms/taskForm";
 
 const TaskList = () => {
-  const taskDefault = new Task(
-    "Example",
-    "Default description",
+  const taskDefault1 = new Task(
+    "Example 1",
+    "description 1",
     false,
     LEVELS.NORMAL
   );
+
+  const taskDefault2 = new Task(
+    "Example 2",
+    "description 2",
+    true,
+    LEVELS.URGENTE
+  );
+
+  const taskDefault3 = new Task(
+    "Example 3",
+    "description 3",
+    true,
+    LEVELS.BLOCKING
+  );
+
+  const taskDefault4 = new Task(
+    "Example 4",
+    "description 4",
+    true,
+    LEVELS.NORMAL
+  );
   // Estado del componente
-  const [tasks, setTasks] = useState(taskDefault);
+  const [tasks, setTasks] = useState([
+    taskDefault1,
+    taskDefault2,
+    taskDefault3,
+    taskDefault4,
+  ]);
   const [loading, setLoading] = useState(true);
 
   // Control del ciclo de vida de componente
@@ -53,14 +80,16 @@ const TaskList = () => {
                 </tr>
               </thead>
               <tbody>
-                {/* TODO: iterar sobre una lista de tareas */}
-                <TaskComponent task={taskDefault}></TaskComponent>
+                {tasks.map((task, index) => {
+                  {/* !Important to add the key in iteration to avoid conflict */}
+                  return <TaskComponent key={index} task={task}></TaskComponent>;
+                })}
               </tbody>
             </table>
           </div>
+          <TaskForm></TaskForm>
         </div>
       </div>
-      {/* TODO: Aplicar un For / Map para renderizar una lista */}
     </div>
   );
 };
