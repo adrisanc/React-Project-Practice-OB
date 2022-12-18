@@ -1,12 +1,22 @@
-import React from 'react'
-import Child from '../pure/child'
+import React, { useState } from "react";
+import Child from "../pure/child";
 
 const Father = () => {
-  return (
-    <div>
-        <Child></Child>
-    </div>
-  )
-}
+  
+  const [name, setName] = useState('Yasmin')
+  
+  function ShowMessage(text) {
+    alert(`Message received: ${text}`);
+  }
 
-export default Father
+  function updateName(newName) {
+    setName(newName);
+  }
+  return (
+    <div style={{ background: "tomato", padding: "30px" }}>
+      <Child name={name} send={ShowMessage} update={updateName}></Child>
+    </div>
+  );
+};
+
+export default Father;
