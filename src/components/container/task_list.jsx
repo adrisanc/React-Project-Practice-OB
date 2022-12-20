@@ -52,9 +52,34 @@ const TaskList = () => {
     };
   }, [tasks]);
 
-  const changeCompleted = (id) => {
-    console.log("TODO: Cambiar estado de un a tarea");
-  };
+  function completeTask(task) {
+    console.log('Completed this Task: ', task);
+    const index = tasks.indexOf(task);
+    // [...tasks] trae todas las tareas
+    const tempTasks = [...tasks];
+    // segpun el index de la tarea cambiara el estado de completed de true a false o viceversa
+    tempTasks[index].completed = !tempTasks[index].completed;
+    // actualizar el estado del componente y actualizar la iteracion de las tareas en orden para mostrar las tareas actualizadas
+    setTasks(tempTasks);
+  }
+
+  function deleteTask(task) {
+    console.log('Deleted this Task: ', task);
+    const index = tasks.indexOf(task);
+    const tempTasks = [...tasks];
+    // tempTasks.splice(indice del cual partimos para borrar elementos, cuantos elementos queremos borrar)
+    tempTasks.splice(index,1);
+    setTasks(tempTasks)
+  }
+
+  function addTask(task) {
+    console.log('Add this Task: ', task);
+    const index = tasks.indexOf(task);
+    const tempTasks = [...tasks];
+    // tempTasks.splice(indice del cual partimos para borrar elementos, cuantos elementos queremos borrar)
+    tempTasks.push(task);
+    setTasks(tempTasks)
+  }
 
   return (
     <div>
@@ -81,15 +106,26 @@ const TaskList = () => {
               </thead>
               <tbody>
                 {tasks.map((task, index) => {
-                  {/* !Important to add the key in iteration to avoid conflict */}
-                  return <TaskComponent key={index} task={task}></TaskComponent>;
+                  {
+                    /* !Important to add the key in iteration to avoid conflict */
+                  }
+                  return (
+                    
+                    <TaskComponent 
+                    // Desde aqui se pasan las props a los hijos
+                      key={index} 
+                      task={task}
+                      complete = {completeTask}
+                      remove = {deleteTask}>
+                    </TaskComponent>
+                  );
                 })}
               </tbody>
             </table>
           </div>
-          <TaskForm></TaskForm>
         </div>
       </div>
+          <TaskForm add={addTask}></TaskForm>
     </div>
   );
 };

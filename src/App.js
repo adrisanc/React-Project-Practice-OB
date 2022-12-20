@@ -48,10 +48,10 @@ function App() {
       {/* </header> */}
 
       {/* Gestíon de eventos */}
-        <Father></Father>
+        {/* <Father></Father> */}
         
       {/* Componente de listado de tareas */}
-      {/* <TaskList></TaskList> */}
+      <TaskList></TaskList>
     </div>
   );
 }
