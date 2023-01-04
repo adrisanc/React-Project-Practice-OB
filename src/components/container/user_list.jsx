@@ -60,7 +60,7 @@ const UserList = () => {
             data-mdb-perfect-scrollbar="true"
             style={{ position: "relative", height: "400px" }}
           >
-            <table>
+            <table className="col-12">
               <thead>
                 <tr>
                   <th scope="col">Name</th>
@@ -70,7 +70,7 @@ const UserList = () => {
                   <th scope="col">Actions</th>
                 </tr>
               </thead>
-              <tbody className="col-12">
+              <tbody>
                 {users.map((user, index) => {
                   return (
                     <UserComponent 
