@@ -23,8 +23,8 @@ function App() {
         {/* Componente de ejemplo funcional */}
         {/* <GreetingF name={'Yasmín'}></GreetingF> */}
         
-        {/* ejercicios 1, 2 y 3 */}
-        {/* <UserList></UserList> */}
+        {/* ejercicios 1, 2, 3 7, 8 y 9 */}
+        <UserList></UserList>
         
         {/* Ejemplos de uso de HOOKS */}
         {/* <Ejemplo1></Ejemplo1> */}
@@ -51,7 +51,7 @@ function App() {
         {/* <Father></Father> */}
         
       {/* Componente de listado de tareas */}
-      <TaskList></TaskList>
+      {/* <TaskList></TaskList> */}
     </div>
   );
 }
